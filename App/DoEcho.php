@@ -7,10 +7,10 @@ use App\Strategy;
 
 class DoEcho implements Strategy
 {
-    public function doAlgorithm(array $data): array
+    public function doSomething(string $data)
     {
-        sort($data);
+        echo $data;
 
-        return $data;
+
     }
 }

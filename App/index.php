@@ -1,14 +1,15 @@
 <?php
 
 require_once "autoload.php";
+use App\DataTreatment;
+use App\DoEcho;
+use App\DoFile;
 
+$data ='JameS';
+$context = new DataTreatment(new DoEcho());
+$context->doSomeBusinessLogic($data);
 
-$context = new Context(new ConcreteStrategyA());
-echo "Client: Strategy is set to normal sorting.\n";
-$context->doSomeBusinessLogic();
+$context->setStrategy(new DoFile());
 
-echo "\n";
+$context->doSomeBusinessLogic($data);
 
-echo "Client: Strategy is set to reverse sorting.\n";
-$context->setStrategy(new ConcreteStrategyB());
-$context->doSomeBusinessLogic();
